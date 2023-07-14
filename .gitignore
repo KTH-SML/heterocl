@@ -34,3 +34,6 @@ rapidjson
 *.egg-info
 
 docs/source/gallery
+
+venv
+dist
