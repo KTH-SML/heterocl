@@ -9,6 +9,31 @@ HeteroCL: A Multi-Paradigm Programming Infrastructure for Software-Defined Recon
 
 [Website](http://heterocl.csl.cornell.edu/web/index.html) | [Installation](https://cornell-zhang.github.io/heterocl/setup/index.html) | [Tutorials](https://cornell-zhang.github.io/heterocl/index.html) | [Documentation](https://cornell-zhang.github.io/heterocl/index.html)
 
+## !! OBS !!
+
+This fork aims at providing pre-built binaries for `heterocl`/`hcl-dialect`.
+
+### Building
+
+**Make sure you're on Ubuntu 22.04**
+
+```
+# 1. hcl-dialect
+git clone --depth 1 https://github.com/kth-sml/hcl-dialect /tmp/hcl-dialect
+cd /tmp/hcl-dialect
+docker/build
+
+# 2. heterocl
+git clone --depth 1 https://github.com/kth-sml/heterocl /tmp/heterocl
+cd /tmp/heterocl
+docker/build
+
+# Wheels can be found in /tmp/heterocl/dist
+pip install /tmp/heterocl/dist/*
+```
+
+- Don't expect that these wheels will work on other systems.
+
 ## Introduction
 
 With the pursuit of improving compute performance under strict power constraints, there is an increasing need for deploying applications to heterogeneous hardware architectures with accelerators, such as GPUs and FPGAs. However, although these heterogeneous computing platforms are becoming widely available, they are very difficult to program especially with FPGAs. As a result, the use of such platforms has been limited to a small subset of programmers with specialized hardware knowledge.
