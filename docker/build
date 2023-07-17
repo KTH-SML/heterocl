@@ -1,0 +1,8 @@
+#! /bin/sh
+
+PROJ="$(dirname $(dirname $0))"
+
+docker build -t heterocl -f "$PROJ/docker/Dockerfile" "$PROJ"
+id=$(docker create heterocl)
+docker cp $id:/dist/. dist
+docker rm -v $id
